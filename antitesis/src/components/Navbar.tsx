@@ -23,9 +23,9 @@ export default function Navbar() {
           </button>
 
           {/* Barra de búsqueda */}
-          <div className="hidden md:flex justify-start hover:ring-2 hover:ring-blue-900 rounded-lg">
+          <div className="md:flex justify-start hover:ring-2 hover:ring-blue-900 rounded-lg">
             <div className="flex items-center px-2 py-1 w-full max-w-md">
-              <HiSearch className="text-[#002496] mr-2" />
+              <HiSearch className="hidden text-[#002496] mr-2" />
               <input
                 type="text"
                 placeholder="Buscar..."
@@ -39,8 +39,10 @@ export default function Navbar() {
         <Image
           src="/marca/TituloAzulNBG.png"
           alt="Logo"
-          width={200}
-          height={200}
+          className="w-32 sm:w-40 md:w-48 lg:w-56"
+          width={0}
+          height={0}  
+          sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
         />
       </div>
 
