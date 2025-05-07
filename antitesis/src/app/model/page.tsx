@@ -1,65 +1,56 @@
-'use client'
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'; // Cargador OBJ
-import { Mesh } from 'three';
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Environment } from "@react-three/drei";
+import { Model } from "@/components/Model";
+import { Scene } from "@/components/Scene"; // Importa el componente del escenario
+import { useState, useEffect } from "react";
 
-// Componente para cargar y mostrar el modelo .obj
-function ObjModel() {
-  const [model, setModel] = useState<THREE.Object3D | null>(null);
-  const modelRef = useRef<THREE.Object3D | null>(null); // Usamos ref para el modelo
-  const [rotation, setRotation] = useState(0);
+const presets = [
+  "sunset",
+  "dawn",
+  "night",
+  "warehouse",
+  "apartment",
+  "city",
+  "lobby",
+] as const;
+
+export function EnvironmentCycler() {
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const loader = new OBJLoader();
-    loader.load('/modelos/prueba.obj', (object) => {
-      setModel(object);
-    });
-
-    // Controlar la rotación con el scroll
-    const handleScroll = (event: WheelEvent) => {
-      setRotation((prev) => prev + event.deltaY * 0.005); // Ajusta la sensibilidad
-    };
-
-    window.addEventListener('wheel', handleScroll);
-
-    return () => {
-      window.removeEventListener('wheel', handleScroll);
-    };
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % presets.length);
+    }, 5000); // cambia cada 5 segundos
+    return () => clearInterval(interval);
   }, []);
 
-  useFrame(() => {
-    if (modelRef.current) {
-      // Aplica la rotación al modelo en su propio eje
-      modelRef.current.rotation.y = rotation;
-    }
-  });
-
-  return (
-    model && (
-      <primitive
-        ref={modelRef}
-        object={model}
-        scale={0.5} // Puedes ajustar el tamaño
-        position={[0, 0, 0]} // Ajusta la posición
-      />
-    )
-  );
+  return <Environment preset={presets[index]} />;
 }
 
-const ModelPage: React.FC = () => {
+export default function Page() {
   return (
-    <div className="w-full h-screen bg-black">
-      <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
-        {/* Agregar luces */}
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
-        {/* Modelo 3D */}
-        <ObjModel />
+    <div className="w-screen h-screen">
+      <Canvas shadows camera={{ position: [0, 1, 18], fov: 10 }}>
+        {/* Escenario */}
+        <Scene />
+
+        {/* Cargar el modelo */}
+        <Suspense fallback={null}>
+          <Model />
+        </Suspense>
+
+        {/* Controles de órbita */}
+        <OrbitControls />
+
+        {/* Entorno */}
+        {/* <Suspense fallback={<Environment preset={"night"} />}>
+          <EnvironmentCycler />
+        </Suspense> */}
+        {/* <Environment preset={"night"} /> */}
       </Canvas>
     </div>
   );
-};
-
-export default ModelPage;
+}

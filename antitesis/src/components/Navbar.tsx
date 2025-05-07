@@ -25,7 +25,7 @@ export default function Navbar() {
           {/* Barra de búsqueda */}
           <div className="md:flex justify-start hover:ring-2 hover:ring-blue-900 rounded-lg">
             <div className="flex items-center px-2 py-1 w-full max-w-md">
-              <HiSearch className="hidden text-[#002496] mr-2" />
+              <HiSearch className="text-[#002496] mr-2" />
               <input
                 type="text"
                 placeholder="Buscar..."

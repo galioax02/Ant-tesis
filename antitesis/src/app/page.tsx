@@ -1,40 +1,74 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Video de fondo */}
-      <video
-        className="absolute pt-10 md:pt-20 top-0 left-0 w-full h-full object-cover z-[-1]"
-        autoPlay
-        loop
-        muted
-        playsInline
+    <div className="w-full min-h-screen scroll-smooth">
+      {/* Sección 1 */}
+      <section className="relative w-full h-screen overflow-hidden">
+        {/* Video de fondo */}
+        <video
+          className="absolute pt-10 md:pt-20 top-0 left-0 w-full h-full object-cover z-[-1]"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/homeVideo.mp4" type="video/mp4" />
+          Tu navegador no soporta videos HTML5.
+        </video>
+
+        {/* Navbar encima */}
+        <Navbar />
+
+        {/* Contenido sobre el video */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
+          {/* <h1 className="text-5xl font-bold bg-blue-900 px-4 py-2 rounded-md">
+            Bienvenido a Antítesis
+          </h1> */}
+          
+
+          <Link href="/model" scroll={true}>
+            <div className="mt-100 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors cursor-pointer">
+              Modelo 3D (Pruebas)
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Sección 2: Personaliza tu anillo */}
+      <section
+        id="custom"
+        className="relative w-full h-screen overflow-hidden flex items-center justify-center"
       >
-        <source src="/videos/homeVideo.mp4" type="video/mp4" />
-        Tu navegador no soporta videos HTML5.
-      </video>
-
-      {/* Navbar encima */}
-      <Navbar />
-
-      {/* Contenido sobre el video */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-        <h1 className="text-5xl font-bold rounded-lg bg-blue-900 px-4 py-2 rounded">
-          Bienvenido a Antítesis
-        </h1>
-        <span className="mt-5 bg-blue-900 rounded-lg text-white text-xl text-center px-5 max-w-2xl">
-          Somos una empresa innovadora que redefine la experiencia digital.
-        </span>
-
-        {/* Botón para redirigir a la página del modelo 3D */}
-        <Link href="/model">
-          <div className="mt-10 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors">
-            Ver Modelo 3D
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/homeRing.mp4" type="video/mp4" />
+          Tu navegador no soporta videos HTML5.
+        </video>
+        <div className="flex justify-between items-center h-full w-250 px-6">
+          
+          <div className="flex-[3] flex-col items-end text-right">
+          <p className="mt-4 text-xl bg-opacity-80 text-shadow-lg/30 px-6 py-2 rounded">
+              Próximamente
+            </p>
+            <h2 className="text-6xl font-bold text-shadow-lg/30 px-4 py-2 rounded-md">
+              Anillo
+            </h2>
+            <h2 className="text-6xl font-bold text-shadow-lg/30 px-4 py-2 rounded-md">
+              paramétrico
+            </h2>
+            
           </div>
-        </Link>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }
