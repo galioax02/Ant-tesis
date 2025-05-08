@@ -32,7 +32,7 @@ export function EnvironmentCycler() {
 
 export default function Page() {
   return (
-    <div className="w-screen h-screen">
+    <div className="pt-10 md:pt-20 relative w-screen h-screen">
       <Canvas shadows camera={{ position: [0, 1, 18], fov: 10 }}>
         {/* Escenario */}
         <Scene />
@@ -43,12 +43,12 @@ export default function Page() {
         </Suspense>
 
         {/* Controles de órbita */}
-        <OrbitControls />
+        
 
         {/* Entorno */}
-        {/* <Suspense fallback={<Environment preset={"night"} />}>
+        <Suspense fallback={<Environment preset={"night"} />}>
           <EnvironmentCycler />
-        </Suspense> */}
+        </Suspense>
         {/* <Environment preset={"night"} /> */}
       </Canvas>
     </div>

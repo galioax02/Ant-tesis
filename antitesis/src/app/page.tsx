@@ -31,8 +31,13 @@ export default function Home() {
           
 
           <Link href="/model" scroll={true}>
-            <div className="mt-100 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors cursor-pointer">
+            <div className="mt-6 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors cursor-pointer">
               Modelo 3D (Pruebas)
+            </div>
+          </Link>
+          <Link href="/configurator" scroll={true}>
+            <div className="mt-6 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors cursor-pointer">
+              Configurator (Pruebas)
             </div>
           </Link>
         </div>
