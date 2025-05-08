@@ -28,7 +28,6 @@ export default function Home() {
           {/* <h1 className="text-5xl font-bold bg-blue-900 px-4 py-2 rounded-md">
             Bienvenido a Antítesis
           </h1> */}
-          
 
           <Link href="/model" scroll={true}>
             <div className="mt-6 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors cursor-pointer">
@@ -59,18 +58,16 @@ export default function Home() {
           Tu navegador no soporta videos HTML5.
         </video>
         <div className="flex justify-between items-center h-full w-250 px-6">
-          
           <div className="flex-[3] flex-col items-end text-right">
-          <p className="mt-4 text-xl bg-opacity-80 text-shadow-lg/30 px-6 py-2 rounded">
+            <p className="mt-4 text-xl bg-opacity-80 text-shadow-lg/30 px-6 py-2 rounded">
               Próximamente
             </p>
             <h2 className="text-6xl font-bold text-shadow-lg/30 px-4 py-2 rounded-md">
               Anillo
             </h2>
             <h2 className="text-6xl font-bold text-shadow-lg/30 px-4 py-2 rounded-md">
-              paramétrico
+              Paramétrico
             </h2>
-            
           </div>
         </div>
       </section>

@@ -10,11 +10,9 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
       <body className="bg-white text-black">
         <Navbar /> {/* Navbar siempre presente */}
         <main>{children}</main> {/* Aquí se carga la página actual */}
       </body>
-    </html>
   );
 }

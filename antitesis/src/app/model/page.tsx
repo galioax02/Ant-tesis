@@ -2,19 +2,17 @@
 
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 import { Model } from "@/components/Model";
 import { Scene } from "@/components/Scene"; // Importa el componente del escenario
 import { useState, useEffect } from "react";
 
 const presets = [
   "sunset",
-  "dawn",
   "night",
   "warehouse",
   "apartment",
   "city",
-  "lobby",
 ] as const;
 
 export function EnvironmentCycler() {

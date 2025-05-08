@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -54,16 +55,16 @@ export default function Navbar() {
         <div className="bg-[#002496] text-white p-4 shadow-lg z-20 transition-all duration-300 ease-out animate-fade-down">
           <ul className="space-y-3">
             <li>
-              <a href="#">Inicio</a>
+              <Link href="/">Inicio</Link>
             </li>
             <li>
-              <a href="#">Productos</a>
+              <Link href="/productos">Productos</Link>
             </li>
             <li>
-              <a href="#">Servicios</a>
+              <Link href="#">Servicios</Link>
             </li>
             <li>
-              <a href="#">Contacto</a>
+              <Link href="#">Contacto</Link>
             </li>
           </ul>
         </div>

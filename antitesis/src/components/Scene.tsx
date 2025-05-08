@@ -1,9 +1,7 @@
 "use client";
 
 export function Scene() {
- 
-
-  // Agregar el helper para ver la dirección de la luz en la escena
+   // Agregar el helper para ver la dirección de la luz en la escena
 
   return (
     <>

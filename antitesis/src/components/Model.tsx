@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Mesh, MeshStandardMaterial } from "three";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 
 export function Model() {
   const ref = useRef<Mesh>(null);
