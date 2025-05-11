@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
             Bienvenido a Antítesis
           </h1> */}
 
-          <Link href="/model" scroll={true}>
+          {/* <Link href="/model" scroll={true}>
             <div className="mt-6 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors cursor-pointer">
               Modelo 3D (Pruebas)
             </div>
@@ -38,7 +38,7 @@ export default function Home() {
             <div className="mt-6 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors cursor-pointer">
               Configurator (Pruebas)
             </div>
-          </Link>
+          </Link> */}
         </div>
       </section>
 

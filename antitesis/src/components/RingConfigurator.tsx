@@ -2,13 +2,13 @@
 
 export default function RingConfigurator() {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen">
+    <div className="flex flex-col mt-5 items-center justify-center w-full h-screen">
       <h1 className="text-2xl font-semibold mb-4">Configura tu anillo</h1>
       <iframe
         id="sdv-iframe"
         width="100%"
-        height="780"
-        src="https://www.shapediver.com/app/iframe/anillo-at-corregido?primaryColor=%23002496&secondaryColor=%23FFAFF&surfaceColor=%23FFSFFF&backgroundColor=%23F8F8F8&showControls=1&showZoomButton=1&showFullscreenButton=1&showToggleControlsButton=0&hideDataOutputsIframe=1&hideExportsIframe=1&hideAttributeVisualizationIframe=1&hideSavedStatesIframe=1&hideJsonMenu=1&parametersDisable=1&parametersValidation=0"
+        height="700"
+        src="https://www.shapediver.com/app/iframe/anillo-at-corregido?primaryColor=%23002496&secondaryColor=%2FFFFFF&surfaceColor=%23FFSFFF&backgroundColor=%23F8F8F8&showControls=1&showZoomButton=&showFullscreenButton=1&showToggleControlsButton=0&hideDataOutputsIframe=0&hideExportsIframe=0&hideAttributeVisualizationIframe=1&hideSavedStatesIframe=1&hideJsonMenu=0&parametersDisable=1&parametersValidation=0"
         referrerPolicy="origin"
         allowFullScreen
         style={{
@@ -22,3 +22,5 @@ export default function RingConfigurator() {
     </div>
   );
 }
+
+

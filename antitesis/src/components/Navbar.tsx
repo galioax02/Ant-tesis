@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -27,6 +26,7 @@ export default function Navbar() {
           <div className="md:flex justify-start hover:ring-2 hover:ring-blue-900 rounded-lg">
             <div className="flex items-center px-2 py-1 w-full max-w-md">
               <HiSearch className="text-[#002496] mr-2" />
+
               <input
                 type="text"
                 placeholder="Buscar..."
@@ -58,10 +58,10 @@ export default function Navbar() {
               <Link href="/">Inicio</Link>
             </li>
             <li>
-              <Link href="/productos">Productos</Link>
+              <Link href="/products/anillos">Anillos</Link>
             </li>
             <li>
-              <Link href="#">Servicios</Link>
+              <Link href="/products/dijes">Dijes</Link>
             </li>
             <li>
               <Link href="#">Contacto</Link>
