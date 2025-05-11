@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import { Model } from "@/components/Model";
-import { Scene } from "@/components/Scene"; // Importa el componente del escenario
+import { Scene } from "@/components/Scene"; 
 import { useState, useEffect } from "react";
 
 const presets = [
@@ -21,7 +21,7 @@ export function EnvironmentCycler() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % presets.length);
-    }, 5000); // cambia cada 5 segundos
+    }, 5000); 
     return () => clearInterval(interval);
   }, []);
 
@@ -38,10 +38,7 @@ export default function Page() {
         {/* Cargar el modelo */}
         <Suspense fallback={null}>
           <Model />
-        </Suspense>
-
-        {/* Controles de órbita */}
-        
+        </Suspense>      
 
         {/* Entorno */}
         <Suspense fallback={<Environment preset={"night"} />}>
