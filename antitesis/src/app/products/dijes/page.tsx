@@ -1,7 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import Navbar from "@/components/Navbar"
+// import Link from "next/link";s
+import Navbar from "@/components/Navbar";
+import Image from "next/image";
+// import { div } from "three/tsl";
 
 const productos = [
   {
@@ -38,14 +40,20 @@ export default function ProductShowcase() {
       {/* Galería */}
       <div className="w-full px-7.5 py-15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-15">
         {productos.map((producto) => (
-          <Link
+          // <Link
+          //   key={producto.id}
+          //   href={`/products/${producto.id}`}
+          //   className="block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
+          // >
+          <div
             key={producto.id}
-            href={`/products/${producto.id}`}
             className="block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
           >
-            <img
+            <Image
               src={producto.imagen}
               alt={producto.nombre}
+              width={720}
+              height={720}
               className="w-full h-64 object-cover object-bottom"
             />
             <div className="p-4">
@@ -54,7 +62,8 @@ export default function ProductShowcase() {
               </h2>
               <p className="text-sm text-gray-600">{producto.descripcion}</p>
             </div>
-          </Link>
+          </div>
+          // </Link>
         ))}
       </div>
     </div>

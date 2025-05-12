@@ -1,6 +1,7 @@
 "use client";
-import Link from "next/link";
+// import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Image from "next/image"
 
 const productos = [
   {
@@ -37,18 +38,21 @@ export default function ProductShowcase() {
       {/* Galería */}
       <div className="w-full px-7.5 py-15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-15">
         {productos.map((producto) => (
-          <Link
-            key={producto.id}
-            href={`${
-              producto.id == "anillo-1"
-                ? "/configurator"
-                : `/products/${producto.id}`
-            }`}
-            className="block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
-          >
-            <img
+        //   <Link
+        //     key={producto.id}
+        //     href={`${
+        //       producto.id == "anillo-1"
+        //         ? "/configurator"
+        //         : `/products/${producto.id}`
+        //     }`}
+        //     className="block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
+        //   >
+        <div key={producto.id} className="block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+            <Image
               src={producto.imagen}
               alt={producto.nombre}
+              width={720}
+              height={720}
               className="w-full h-64 object-cover object-center"
             />
             <div className="p-4">
@@ -57,7 +61,7 @@ export default function ProductShowcase() {
               </h2>
               <p className="text-sm text-gray-600">{producto.descripcion}</p>
             </div>
-          </Link>
+        </div>
         ))}
       </div>
     </div>

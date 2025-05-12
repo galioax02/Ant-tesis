@@ -64,7 +64,7 @@ export default function Navbar() {
               <Link href="/products/dijes">Dijes</Link>
             </li>
             <li>
-              <Link href="#">Contacto</Link>
+              <Link href="/configurator">Anillo Paramétrico</Link>
             </li>
           </ul>
         </div>

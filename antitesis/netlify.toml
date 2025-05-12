@@ -1,0 +1,10 @@
+# netlify.toml
+[build]
+  command = "npm run build"
+  publish = "out"
+
+# Configuración para SPA (aplicación de una sola página)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

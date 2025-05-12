@@ -8,7 +8,7 @@ export default function RingConfigurator() {
         id="sdv-iframe"
         width="100%"
         height="700"
-        src="https://www.shapediver.com/app/iframe/anillo-at-corregido?primaryColor=%23002496&secondaryColor=%2FFFFFF&surfaceColor=%23FFSFFF&backgroundColor=%23F8F8F8&showControls=1&showZoomButton=&showFullscreenButton=1&showToggleControlsButton=0&hideDataOutputsIframe=0&hideExportsIframe=0&hideAttributeVisualizationIframe=1&hideSavedStatesIframe=1&hideJsonMenu=0&parametersDisable=1&parametersValidation=0"
+        src="https://www.shapediver.com/app/iframe/anillo-at-corregido?primaryColor=%23002496&secondaryColor=%23FFFFFF&surfaceColor=%23FFSFFF&backgroundColor=%23F8F8F8&showControls=1&showZoomButton=&showFullscreenButton=1&showToggleControlsButton=0&hideDataOutputsIframe=0&hideExportsIframe=0&hideAttributeVisualizationIframe=1&hideSavedStatesIframe=1&hideJsonMenu=0&parametersDisable=1&parametersValidation=0"
         referrerPolicy="origin"
         allowFullScreen
         style={{

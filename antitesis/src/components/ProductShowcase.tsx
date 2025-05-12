@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image"
 
 const productos = [
   {
@@ -101,7 +102,7 @@ export default function ProductShowcase() {
               href={`${producto.id == "anillo-1" ? "/configurator" : `/products/${producto.id}`}`}
               className="block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
             >
-              <img
+              <Image
                 src={producto.imagen}
                 alt={producto.nombre}
                 className={`w-full h-64 object-cover ${
