@@ -8,7 +8,7 @@ export default function RingConfigurator() {
         id="sdv-iframe"
         width="100%"
         height="700"
-        src="https://www.shapediver.com/app/iframe/anillo-at-corregido?primaryColor=%23002496&secondaryColor=%23FFFFFF&surfaceColor=%23FFSFFF&backgroundColor=%23F8F8F8&showControls=1&showZoomButton=&showFullscreenButton=1&showToggleControlsButton=0&hideDataOutputsIframe=0&hideExportsIframe=0&hideAttributeVisualizationIframe=1&hideSavedStatesIframe=1&hideJsonMenu=0&parametersDisable=1&parametersValidation=0"
+        src="https://www.shapediver.com/app/iframe/anillo-at-corregido-3?primaryColor=%23317DD4&secondaryColor=%23393A45&surfaceColor=%23FFFFFF&backgroundColor=%23F8F8F8&showControls=1&showZoomButton=1&showFullscreenButton=1&showToggleControlsButton=1&hideDataOutputsIframe=1&hideAttributeVisualizationIframe=1&hideJsonMenu=1&parametersDisable=1&parametersValidation=0"
         referrerPolicy="origin"
         allowFullScreen
         style={{
@@ -17,8 +17,9 @@ export default function RingConfigurator() {
           borderWidth: 0,
         }}
       >
-        <p>Your browser does not support iframes.</p>
+        
       </iframe>
+      
     </div>
   );
 }

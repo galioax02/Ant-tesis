@@ -1,6 +1,13 @@
 // src/lib/products.ts
 export const productos = [
   {
+    id: "anillo-1",
+    nombre: "Anillo Paramétrico",
+    categoria: "anillos",
+    descripcion: "Diseño único basado en parámetros generativos.",
+    imagen: "/placeholders/anillo1.jpg",
+  },
+  {
     id: "anillo-2",
     nombre: "Anillo Clásico",
     categoria: "anillos",
@@ -42,4 +49,18 @@ export async function getProductById(id: string) {
   // Simula una llamada a base de datos o API
   await new Promise((r) => setTimeout(r, 100)); // Opcional, simula delay
   return productos.find((p) => p.id === id);
+}
+
+export function getProductsByCategory(categoria: string) {
+  return productos.filter((p) => p.categoria === categoria);
+}
+
+export async function getAllProducts() {
+  // Simula una llamada a base de datos o API
+  await new Promise((r) => setTimeout(r, 100)); // Opcional, simula delay
+  return productos;
+}
+
+export function getCategories() {
+  return [...new Set(productos.map((p) => p.categoria))];
 }
