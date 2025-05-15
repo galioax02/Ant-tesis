@@ -101,7 +101,7 @@ const ShapeDiverViewer = () => {
         <canvas
           ref={canvasRef}
           style={{  display: "block" }}
-          className="rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.5)] object-cover max-h-[500px]"
+          className="rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.5)] object-cover min-h-[300px] max-h-[500px]"
         />
       </div>
 

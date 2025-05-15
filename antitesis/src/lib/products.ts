@@ -2,9 +2,9 @@
 export const productos = [
   {
     id: "anillo-1",
-    nombre: "Anillo Paramétrico",
-    categoria: "anillos",
-    descripcion: "Diseño único basado en parámetros generativos.",
+    nombre: "Anillo Ondas Elegantes",
+  categoria: "anillos",
+  descripcion: "Elegante pieza con patrones ondulados personalizables, ideal para ocasiones especiales.",
     imagen: "/placeholders/anillo1.jpg",
   },
   {
