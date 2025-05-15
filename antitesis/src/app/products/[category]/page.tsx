@@ -23,11 +23,7 @@ export default async function ProductShowcase({ params }: { params: { category: 
         {productosFiltrados.map((producto) => (
           <Link
             key={producto.id}
-            href={
-              producto.id === "anillo-1"
-                ? "/configurator"
-                : `/products/${params.category}/${producto.id}`
-            }
+            href={`/products/${params.category}/${producto.id}`}
             className="block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
           >
             <Image
@@ -35,7 +31,9 @@ export default async function ProductShowcase({ params }: { params: { category: 
               alt={producto.nombre}
               width={720}
               height={720}
-              className="w-full h-64 object-cover object-center"
+              className={producto.categoria === "anillos"
+                ? "w-full h-64 object-cover object-center"
+                : "w-full h-64 object-cover object-bottom"}
             />
             <div className="p-4">
               <h2 className="text-xl text-black font-semibold mb-1">
