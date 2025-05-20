@@ -1,6 +1,6 @@
 "use client"
 
-import RingConfigurator from "@/components/RingConfigurator";
+import RingConfigurator from "@/components/ViewerTest";
 import Navbar from "@/components/Navbar";
 
 export default function Page() {

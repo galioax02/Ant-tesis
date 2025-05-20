@@ -34,7 +34,6 @@ export default async function ProductDetail(
           className={producto.categoria === "anillos"
                 ? "rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.5)] object-center object-cover max-h-[500px]"
                 :"rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.5)] object-bottom object-cover max-h-[500px]"}
-          
         />
       </div>
       <div className="w-full md:w-1/2 flex flex-col justify-center">

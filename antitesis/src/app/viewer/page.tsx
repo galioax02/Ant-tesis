@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar'
-import ShapeDiverViewer from '@/components/ViewerTry'
+import ShapeDiverViewer from '@/components/Viewer'
 
 export default function Home() {
   return (
