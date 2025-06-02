@@ -29,17 +29,17 @@ export default async function ProductShowcase({ params }: { params: { category: 
             <Image
               src={producto.imagen}
               alt={producto.nombre}
-              width={720}
-              height={720}
+              width={1080}
+              height={1080}
               className={producto.categoria === "anillos"
                 ? "w-full h-64 object-cover object-center"
-                : "w-full h-64 object-cover object-bottom"}
+                : "w-full h-96 object-cover object-center"}
             />
             <div className="p-4">
               <h2 className="text-xl text-black font-semibold mb-1">
                 {producto.nombre}
               </h2>
-              <p className="text-sm text-gray-600">{producto.descripcion}</p>
+              {/* <p className="text-sm text-gray-600">{producto.descripcion}</p> */}
             </div>
           </Link>
         ))}

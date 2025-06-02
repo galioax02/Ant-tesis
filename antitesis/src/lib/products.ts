@@ -24,24 +24,24 @@ export const productos = [
   },
   {
     id: "dije-1",
-    nombre: "Dije Estelar",
+    nombre: "Dije Nodo",
     categoria: "dijes",
-    descripcion: "Inspirado en constelaciones antiguas.",
-    imagen: "/placeholders/dije1.jpg",
+    descripcion: "Su forma asimétrica y envolvente juega con el vacío, dejando espacio entre líneas que parecen pensadas por la naturaleza. Evoca movimiento interno, exploración y equilibrio imperfecto, es una pieza pensada para quienes disfrutan de las formas que no necesitan explicación.",
+    imagen: "/placeholders/DijeNodo.jpg",
   },
   {
     id: "dije-2",
-    nombre: "Dije Corazón",
+    nombre: "Dije Elipse",
     categoria: "dijes",
-    descripcion: "Un símbolo eterno del amor.",
-    imagen: "/placeholders/dije2.jpg",
+    descripcion: "Elipse toma inspiración en las trayectorias naturales y armónicas del universo. Su contorno fluido y centro vacío invitan a la contemplación, como una pausa que da sentido al ritmo. Simboliza el equilibrio, el ciclo vital y la continuidad.",
+    imagen: "/placeholders/DijeElipse.jpg",
   },
   {
     id: "dije-3",
-    nombre: "Dije Geométrico",
+    nombre: "Dije Cenit",
     categoria: "dijes",
-    descripcion: "Formas limpias y modernas.",
-    imagen: "/placeholders/dije1.jpg",
+    descripcion: "Su forma ligera y abierta sugiere dirección, expansión y claridad. Evoca crecimiento, paso y transición. Este dije minimalista captura el instante en que todo parece avanzar.",
+    imagen: "/placeholders/DijeCenit.jpg",
   },
 ];
 
