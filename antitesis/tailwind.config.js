@@ -6,6 +6,9 @@ module.exports = {
     ],
     theme: {
       extend: {
+        fontFamily: {
+          sans: ['liebling', 'sans-serif'],
+        },
         colors: {
           primary: '#ffffff', 
           secondary: '#002496'

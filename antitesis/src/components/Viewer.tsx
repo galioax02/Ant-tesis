@@ -35,7 +35,7 @@ const ShapeDiverViewer = () => {
           branding: {
             logo: "/marca/MarcaAzulNBG.png",
             busyModeSpinner: "/marca/LogoAzulNBG.png",
-            backgroundColor: "",
+            backgroundColor: "FFFFFF",
           },
 
         });

@@ -1,7 +1,7 @@
 // app/layout.tsx
 import "../globals.css";
 import { ReactNode } from "react";
-// import  Navbar  from "@/components/Navbar";
+import  Navbar  from "@/components/Navbar";
 
 export const metadata = {
   title: "Ring Configurator",
@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     
     
       <body className="bg-white text-black">
-        {/* <Navbar /> Navbar siempre presente */}
+        <Navbar />
         <main>{children}</main> {/* Aquí se carga la página actual */}
       </body>
 
