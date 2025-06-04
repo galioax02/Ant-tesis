@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid grid-cols-3 gap-4 w-full max-w-md">
           {/* Columna izquierda: Instagram */}
           <div className="flex justify-center items-center min-w-[100px]">
-            <Link href="https://instagram.com/tucuenta" target="_blank">
+            <Link href="https://instagram.com/antitesis.mx" target="_blank">
               <FaInstagram className="text-white text-2xl hover:opacity-80 transition-opacity" />
             </Link>
           </div>

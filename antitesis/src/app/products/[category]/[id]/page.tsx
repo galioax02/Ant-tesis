@@ -31,9 +31,9 @@ export default async function ProductDetail({
   return (
     <div className="relative z-0 bg-white max-w-7xl mx-auto px-6 pt-32 pb-10">
       <div className="min-h-screen bg-white text-[#002496] relative">
-         <div className="absolute inset-0 h-[300vh] z-0 pointer-events-none">
-            <ScrollGallery images={producto.galeria} />
-          </div>
+        <div className="absolute inset-0 h-[300vh] z-0 pointer-events-none">
+          <ScrollGallery images={producto.galeria} />
+        </div>
         <Navbar />
 
         <div className="max-w-7xl mx-auto px-6 py-15 relative z-10">
@@ -47,8 +47,8 @@ export default async function ProductDetail({
                 height={500}
                 className={
                   producto.categoria === "anillos"
-                    ? "rounded-lg shadow object-center object-cover max-h-[500px]"
-                    : "rounded-lg shadow object-bottom object-cover max-h-[500px]"
+                    ? "shadow object-center object-cover max-h-[500px]"
+                    : "shadow object-bottom object-cover max-h-[500px]"
                 }
               />
             </div>
@@ -67,10 +67,9 @@ export default async function ProductDetail({
           </div>
 
           {/* Galería fullscreen activada por scroll */}
-         
         </div>
       </div>
-      <Footer />
+      
     </div>
   );
 }

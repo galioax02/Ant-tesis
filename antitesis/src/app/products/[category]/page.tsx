@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
+
 import Image from "next/image";
 import { getProductsByCategory, getCategories } from "@/lib/products";
 import Footer from "@/components/Footer";
@@ -13,10 +13,11 @@ export default async function ProductShowcase({ params }: { params: { category: 
   const productosFiltrados = getProductsByCategory(params.category);
 
   return (
+    <main>
     <div className="p-6 bg-white mx-auto h-250">
-      <Navbar />
+      
       <h1 className="text-4xl mt-30 text-[#002496] font-bold mb-6 text-center">
-        Catálogo de {params.category}
+        {params.category}
       </h1>
 
       {/* Galería */}
@@ -25,7 +26,7 @@ export default async function ProductShowcase({ params }: { params: { category: 
           <Link
             key={producto.id}
             href={`/products/${params.category}/${producto.id}`}
-            className="block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
+            className="block border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition"
           >
             <Image
               src={producto.imagen}
@@ -40,12 +41,15 @@ export default async function ProductShowcase({ params }: { params: { category: 
               <h2 className="text-xl text-black font-semibold mb-1">
                 {producto.nombre}
               </h2>
+              <p className="text-2xl text-blue mb-2">{producto.precio}</p>
               {/* <p className="text-sm text-gray-600">{producto.descripcion}</p> */}
             </div>
           </Link>
         ))}
       </div>
-      <Footer />
+      
     </div>
+    <Footer />
+    </main>
   );
 }

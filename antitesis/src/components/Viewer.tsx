@@ -176,7 +176,7 @@ const ShapeDiverViewer = () => {
         ))}
 
         <button
-          onClick={() => window.open("https://shaycomac.8thwall.app/antitesisar/", "_blank")}
+          onClick={() => window.open("https://8th.io/t33nt", "_blank")}
           className="bg-[#002496] text-white px-6 py-3 rounded-lg mt-6 hover:bg-[#001f7a] transition-colors"
         >
           Ver en Realidad Aumentada

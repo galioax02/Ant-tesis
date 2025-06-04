@@ -28,7 +28,7 @@ export const productos = [
   },
   {
     id: "Nodo",
-    nombre: "Dije Nodo",
+    nombre: "Dije nodo",
     categoria: "dijes",
     descripcion:
       "Su forma asimétrica y envolvente juega con el vacío, dejando espacio entre líneas que parecen pensadas por la naturaleza. Evoca movimiento interno, exploración y equilibrio imperfecto, es una pieza pensada para quienes disfrutan de las formas que no necesitan explicación.",
@@ -43,7 +43,7 @@ export const productos = [
   },
   {
     id: "Elipse",
-    nombre: "Dije Elipse",
+    nombre: "Dije elipse",
     categoria: "dijes",
     descripcion:
       "Elipse toma inspiración en las trayectorias naturales y armónicas del universo. Su contorno fluido y centro vacío invitan a la contemplación, como una pausa que da sentido al ritmo. Simboliza el equilibrio, el ciclo vital y la continuidad.",
@@ -58,7 +58,7 @@ export const productos = [
   },
   {
     id: "Cenit",
-    nombre: "Dije Cenit",
+    nombre: "Dije cenit",
     categoria: "dijes",
     descripcion:
       "Su forma ligera y abierta sugiere dirección, expansión y claridad. Evoca crecimiento, paso y transición. Este dije minimalista captura el instante en que todo parece avanzar.",
