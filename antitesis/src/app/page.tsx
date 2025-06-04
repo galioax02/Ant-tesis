@@ -1,7 +1,13 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-// import Link from "next/link";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { Scene } from "@/components/Scene";
+import { Model } from "@/components/Model";
+import EnvironmentCycler from "@/components/EnvironmentCycler";
+import Footer from "@/components/Footer";
+
 
 export default function Home() {
   return (
@@ -47,16 +53,17 @@ export default function Home() {
         id="custom"
         className="relative w-full h-screen overflow-hidden flex items-center justify-center"
       >
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/videos/homeRing.mp4" type="video/mp4" />
-          Tu navegador no soporta videos HTML5.
-        </video>
+        <div className="absolute top-0 left-0 w-full h-full z-[-1]">
+          <Canvas shadows camera={{ position: [0, 1, 18], fov: 10 }}>
+            <Scene />
+            <Suspense fallback={null}>
+              <Model />
+            </Suspense>
+            <Suspense fallback={null}>
+              <EnvironmentCycler />
+            </Suspense>
+          </Canvas>
+        </div>
         <div className="flex justify-between items-center h-full w-250 px-6">
           <div className="flex-[3] flex-col items-end text-right">
             <p className="mt-4 text-xl bg-opacity-80 text-shadow-lg/30 px-6 py-2 rounded">
@@ -71,6 +78,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

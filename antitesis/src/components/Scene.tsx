@@ -50,11 +50,11 @@ export function Scene() {
       {/* PISO */}
       <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>
         <planeGeometry args={[10, 10]} />
-        <meshStandardMaterial color="#000" />
+        <meshStandardMaterial color="#000000" />
       </mesh>
 
       {/* FONDO */}
-      {/* <color attach="background" args={["#383838"]} /> */}
+      <color attach="background" args={["#bbbbbb"]} />
     </>
   );
 }
