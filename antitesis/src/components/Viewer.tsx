@@ -176,10 +176,10 @@ const ShapeDiverViewer = () => {
         ))}
 
         <button
-          onClick={handleExport}
+          onClick={() => window.open("https://shaycomac.8thwall.app/antitesisar/", "_blank")}
           className="bg-[#002496] text-white px-6 py-3 rounded-lg mt-6 hover:bg-[#001f7a] transition-colors"
         >
-          Exportar STL
+          Ver en Realidad Aumentada
         </button>
       </div>
     </div>
