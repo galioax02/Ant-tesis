@@ -34,20 +34,14 @@ export default function Home() {
 
         {/* Contenido sobre el video */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
-          {/* <h1 className="text-5xl font-bold bg-blue-900 px-4 py-2 rounded-md">
-            Bienvenido a Antítesis
-          </h1> */}
-
-          {/* <Link href="/model" scroll={true}>
-            <div className="mt-6 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors cursor-pointer">
-              Modelo 3D (Pruebas)
-            </div>
-          </Link>
-          <Link href="/configurator" scroll={true}>
-            <div className="mt-6 px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800 transition-colors cursor-pointer">
-              Configurator (Pruebas)
-            </div>
-          </Link> */}
+          <Image
+          src="/placeholders/marca/ATModelo-7.jpg"
+          alt="Logo"
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          width={0}
+          height={0}
+          sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
+        />
         </div>
       </section>
 

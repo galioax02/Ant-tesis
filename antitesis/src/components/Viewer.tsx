@@ -102,27 +102,6 @@ const ShapeDiverViewer = () => {
     );
   };
 
-  const handleExport = async () => {
-    if (!sessionRef.current) return;
-
-    try {
-      const exportId = Object.keys(sessionRef.current.exports)[0];
-      const exportItem = sessionRef.current.exports[exportId];
-      const content = await exportItem.download();
-
-      const url = URL.createObjectURL(content.blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `${exportItem.name}.stl`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Error al exportar STL:", error);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-white text-[#002496] px-6 py-20 flex flex-col md:flex-row gap-10 max-w-7xl mx-auto overflow-hidden">
       <div className="w-full md:w-1/2 flex items-center justify-center overflow-hidden">

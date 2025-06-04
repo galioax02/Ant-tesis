@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import ScrollGallery from "@/components/ScrollGallery";
-import Footer from "@/components/Footer";
 
 export async function generateStaticParams() {
   const params = [];
