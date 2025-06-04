@@ -42,7 +42,7 @@ const ShapeDiverViewer = () => {
 
         const session = await createSession({
           ticket:
-            "2b7b0295f37183c98cd61b51d6ab8959aebf0f8a3f64a1a552b03bd817aac853d336a637784a5398525fe23475f295c3775b64204a4632f2186098f9cf79067a4e566400f036d932693dab18aa73907a7fa04c923786ed50e2cf1a2a584977a9694e0f1c5d2720-b72edf723a474c50c7771805cf8003fe-5b9465f92a0cf9c235b8ea315aab0cd5",
+            "aa2b50e0dea2d07df111944c74b8f4d0bbf662c991c3db198dd4deaf0c7d43815307dab7ca7c2293c4f2a26aff3d3fbdcd8a42a2afd48f39e76f6da54de3eda97e15238cccd29392bece05a53c09da4162c20975eb375d80c705424f3a240f0d079f973a5501f5-3b4f087de5da9eb54bf7b2871300ddcb",
           modelViewUrl: "https://sdr8euc1.eu-central-1.shapediver.com",
           id: "mySession",
         });
@@ -59,7 +59,7 @@ const ShapeDiverViewer = () => {
               ? (p as any).step  // eslint-disable-line 
               : typeof (p as any).decimalplaces !== "undefined"  // eslint-disable-line 
               ? Math.pow(10, -(p as any).decimalplaces)  // eslint-disable-line 
-              : 0.01;
+              : 0.5;
           return {
             id: p.id,
             name: p.displayname || p.name,
@@ -149,7 +149,9 @@ const ShapeDiverViewer = () => {
                 }}
                 className="w-full p-2 border border-gray-300 rounded-md text-[#002496]"
               >
-                {param.api.choices.map((choice: any) => (  // eslint-disable-line 
+                {param.api.choices
+                .filter((choice: any) => !/^\d+\.\d+$/.test(choice))  // eslint-disable-line
+                .map((choice: any) => (  // eslint-disable-line 
                   <option key={choice} value={choice}>
                     {choice}
                   </option>

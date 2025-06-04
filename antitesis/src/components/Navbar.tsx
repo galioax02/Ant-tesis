@@ -57,9 +57,9 @@ export default function Navbar() {
             <li>
               <Link href="/">Inicio</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/products/anillos">Anillos</Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/products/dijes">Dijes</Link>
             </li>

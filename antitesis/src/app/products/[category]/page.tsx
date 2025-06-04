@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { getProductsByCategory, getCategories } from "@/lib/products";
+import Footer from "@/components/Footer";
 
 export async function generateStaticParams() {
   return getCategories().map((category) => ({ category }));
@@ -44,6 +45,7 @@ export default async function ProductShowcase({ params }: { params: { category: 
           </Link>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -3,9 +3,11 @@ export const productos = [
   {
     id: "anillo-1",
     nombre: "Anillo Ondas Elegantes",
-  categoria: "anillos",
-  descripcion: "Elegante pieza con patrones ondulados personalizables, ideal para ocasiones especiales.",
+    categoria: "anillos",
+    descripcion:
+      "Elegante pieza con patrones ondulados personalizables, ideal para ocasiones especiales.",
     imagen: "/placeholders/anillo1.jpg",
+    galeria: [],
   },
   {
     id: "anillo-2",
@@ -14,6 +16,7 @@ export const productos = [
     descripcion: "Elegancia atemporal en oro blanco.",
     imagen: "/placeholders/anillo2.jpg",
     precio: "$2,500 MXN",
+    galeria: [],
   },
   {
     id: "anillo-3",
@@ -21,27 +24,51 @@ export const productos = [
     categoria: "anillos",
     descripcion: "Simplicidad y sofisticación.",
     imagen: "/placeholders/anillo3.jpg",
+    galeria: [],
   },
   {
-    id: "dije-1",
+    id: "Nodo",
     nombre: "Dije Nodo",
     categoria: "dijes",
-    descripcion: "Su forma asimétrica y envolvente juega con el vacío, dejando espacio entre líneas que parecen pensadas por la naturaleza. Evoca movimiento interno, exploración y equilibrio imperfecto, es una pieza pensada para quienes disfrutan de las formas que no necesitan explicación.",
-    imagen: "/placeholders/DijeNodo.jpg",
+    descripcion:
+      "Su forma asimétrica y envolvente juega con el vacío, dejando espacio entre líneas que parecen pensadas por la naturaleza. Evoca movimiento interno, exploración y equilibrio imperfecto, es una pieza pensada para quienes disfrutan de las formas que no necesitan explicación.",
+    imagen: "/placeholders/Nodo/DijeNodo.jpg",
+    precio: "$2,500 MXN",
+    galeria: [
+      "/placeholders/Nodo/NodoHorizontal.jpg",
+      "/placeholders/Nodo/NodoHorizontal2.jpg",
+      "/placeholders/Nodo/NodoModelo.jpg",
+      "/placeholders/Nodo/DijeNodo.jpg"
+    ],
   },
   {
-    id: "dije-2",
+    id: "Elipse",
     nombre: "Dije Elipse",
     categoria: "dijes",
-    descripcion: "Elipse toma inspiración en las trayectorias naturales y armónicas del universo. Su contorno fluido y centro vacío invitan a la contemplación, como una pausa que da sentido al ritmo. Simboliza el equilibrio, el ciclo vital y la continuidad.",
-    imagen: "/placeholders/DijeElipse.jpg",
+    descripcion:
+      "Elipse toma inspiración en las trayectorias naturales y armónicas del universo. Su contorno fluido y centro vacío invitan a la contemplación, como una pausa que da sentido al ritmo. Simboliza el equilibrio, el ciclo vital y la continuidad.",
+    imagen: "/placeholders/Elipse/DijeElipse.jpg",
+    precio: "$2,500 MXN",
+    galeria: [
+      "/placeholders/Elipse/ElipseHorizontal.jpg",
+      "/placeholders/Elipse/ElipseHorizontal2.jpg",
+      "/placeholders/Elipse/ElipseModelo.jpg",
+      "/placeholders/Elipse/DijeElipse.jpg"
+    ],
   },
   {
-    id: "dije-3",
+    id: "Cenit",
     nombre: "Dije Cenit",
     categoria: "dijes",
-    descripcion: "Su forma ligera y abierta sugiere dirección, expansión y claridad. Evoca crecimiento, paso y transición. Este dije minimalista captura el instante en que todo parece avanzar.",
-    imagen: "/placeholders/DijeCenit.jpg",
+    descripcion:
+      "Su forma ligera y abierta sugiere dirección, expansión y claridad. Evoca crecimiento, paso y transición. Este dije minimalista captura el instante en que todo parece avanzar.",
+    imagen: "/placeholders/Cenit/DijeCenit.jpg",
+    precio: "$2,500 MXN",
+    galeria: [
+      "/placeholders/Cenit/CenitHorizontal.jpg",
+      "/placeholders/Cenit/CenitModelo.jpg",
+      "/placeholders/Cenit/DijeCenit.jpg"
+    ],
   },
 ];
 
