@@ -6,7 +6,6 @@ import { Suspense } from "react";
 import { Scene } from "@/components/Scene";
 import { Model } from "@/components/Model";
 import EnvironmentCycler from "@/components/EnvironmentCycler";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import Image from "next/image";
@@ -85,7 +84,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

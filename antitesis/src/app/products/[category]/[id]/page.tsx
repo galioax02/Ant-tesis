@@ -2,9 +2,9 @@
 
 import { productos, getCategories } from "@/lib/products";
 import { notFound } from "next/navigation";
-import Image from "next/image";
+
 import Navbar from "@/components/Navbar";
-import ScrollGallery from "@/components/ScrollGallery";
+import Carousel from "@/components/Carousel";
 
 export async function generateStaticParams() {
   const params = [];
@@ -30,27 +30,14 @@ export default async function ProductDetail({
   return (
     <div className="relative z-0 bg-white max-w-7xl mx-auto px-6 pt-32 pb-10">
       <div className="min-h-screen bg-white text-[#002496] relative">
-        <div className="absolute inset-0 h-[300vh] z-0 pointer-events-none">
-          <ScrollGallery images={producto.galeria} />
-        </div>
+        
         <Navbar />
 
         <div className="max-w-7xl mx-auto px-6 py-15 relative z-10">
           {/* Imagen + descripción */}
           <div className="flex flex-col md:flex-row gap-10 mb-32">
-            <div className="w-full md:w-1/2 flex items-center justify-center">
-              <Image
-                src={producto.imagen}
-                alt={producto.nombre}
-                width={500}
-                height={500}
-                className={
-                  producto.categoria === "anillos"
-                    ? "shadow object-center object-cover max-h-[500px]"
-                    : "shadow object-bottom object-cover max-h-[500px]"
-                }
-              />
-            </div>
+            <Carousel images={producto.galeria} />
+            
 
             <div className="w-full md:w-1/2 flex flex-col justify-center">
               <h1 className="text-4xl font-bold mb-4">{producto.nombre}</h1>

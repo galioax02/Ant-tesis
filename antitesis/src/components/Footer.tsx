@@ -29,8 +29,8 @@ export default function Footer() {
 
           {/* Columna derecha: Hecho por */}
           <div className="flex justify-center items-center min-w-[100px]">
-            <p className="text-sm text-white/70 whitespace-nowrap">
-              Hecho con 💍
+            <p className="text-xs text-white/70 whitespace-nowrap">
+              Hecho por<br/>Martín Rivera
             </p>
           </div>
         </div>

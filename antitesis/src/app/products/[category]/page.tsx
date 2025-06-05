@@ -1,9 +1,6 @@
-
 import Link from "next/link";
-
 import Image from "next/image";
 import { getProductsByCategory, getCategories } from "@/lib/products";
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export async function generateStaticParams() {
@@ -27,7 +24,7 @@ export default async function ProductShowcase({ params }: { params: { category: 
           <Link
             key={producto.id}
             href={`/products/${params.category}/${producto.id}`}
-            className="block border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition"
+            className="block border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition transform hover:scale-105"
           >
             <Image
               src={producto.imagen}
@@ -48,7 +45,7 @@ export default async function ProductShowcase({ params }: { params: { category: 
       </div>
       
     </div>
-    <Footer />
+    
     </main>
   );
 }
