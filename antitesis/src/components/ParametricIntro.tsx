@@ -10,28 +10,28 @@ const ParametricIntro: React.FC<ParametricIntroProps> = ({ open, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="bg-white text-[#002496] rounded-xl shadow-2xl max-w-2xl w-full p-12 relative">
-        <h2 className="text-lg font-bold mb-4">¿Qué es una joya paramétrica?</h2>
-        <p className="mb-4 text-base">
+      <div className="bg-white text-[#002496] rounded-xl shadow-2xl w-full max-w-2xl md:p-12 p-4 mx-2 max-w-xs sm:max-w-md md:max-w-2xl relative">
+        <h2 className="font-bold mb-4 text-base sm:text-lg">¿Qué es una joya paramétrica?</h2>
+        <p className="mb-4 text-sm sm:text-base">
           Un anillo o un dije paramétrico no parte de un molde fijo, sino de un sistema de diseño que responde a tus decisiones. Cada curva, volumen o textura cambia en tiempo real según lo que elijas.
         </p>
-        <p className="mb-4 font-semibold text-base">
+        <p className="mb-4 font-semibold text-sm sm:text-base">
           Esto no es un catálogo.<br />Es una conversación entre tú, el diseño y el algoritmo.
         </p>
-        <h3 className="text-base font-bold mb-2">¿Qué puedes hacer?</h3>
-        <ul className="list-disc list-inside mb-4 space-y-1 text-base">
+        <h3 className="font-bold mb-2 text-sm sm:text-base">¿Qué puedes hacer?</h3>
+        <ul className="list-disc list-inside mb-4 space-y-1 text-sm sm:text-base">
           <li>Jugar con proporciones, simetrías y detalles.</li>
           <li>Ver cómo evoluciona tu pieza al mover los parámetros.</li>
           <li>Probarla en tu mano (o imaginarla en tu cuello).</li>
           <li>Crear una joya que no existe hasta que tú la piensas.</li>
         </ul>
-        <p className="mt-6 text-base">
+        <p className="mt-6 text-sm sm:text-base">
           Cuando estés listo, da el siguiente paso:<br />
           <span className="font-bold">crea tu pieza.</span>
         </p>
         <button
           onClick={onClose}
-          className="mt-8 px-8 py-3 bg-[#002496] text-white rounded-lg font-semibold hover:bg-[#001a70] transition"
+          className="mt-8 px-6 py-2 sm:px-8 sm:py-3 bg-[#002496] text-white rounded-lg font-semibold hover:bg-[#001a70] transition text-sm sm:text-base"
         >
           Entendido
         </button>

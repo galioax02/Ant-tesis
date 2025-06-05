@@ -14,7 +14,7 @@ export default function Navbar() {
         {/* Botón de regreso a la izquierda */}
         <button
           onClick={() => window.history.back()}
-          className="text-[#002496] text-5xl hover:ring-2 hover:ring-blue-900 rounded-lg mr-2"
+          className="text-[#002496] text-5xl hover:shadow-lg/50 px-1 rounded-lg mr-2"
           aria-label="Regresar"
         >
           &#8592;
@@ -38,7 +38,7 @@ export default function Navbar() {
             setIsMenuOpen(!isMenuOpen);
             console.log(isMenuOpen);
           }}
-          className="text-[#002496] text-4xl hover:ring-2 hover:ring-blue-900 rounded-lg ml-2"
+          className="text-[#002496] text-4xl hover:shadow-lg/50 rounded-lg ml-2"
           aria-label="Abrir menú"
         >
           <HiMenuAlt3 />

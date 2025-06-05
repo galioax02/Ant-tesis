@@ -13,7 +13,7 @@ const WhoAreWe = () => {
           height={1080}
           className="py-10 w-[500px] md:w-[600px] lg:w-[700px] object-contain mb-6"
         />
-        <h1 className="text-4xl font-bold mb-4 text-center">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center">
           El algoritmo interpreta, la identidad define
         </h1>
       </section>
@@ -59,11 +59,11 @@ const WhoAreWe = () => {
       </section>
 
       {/* 3. Misión, Visión, Valores + Imagen vertical */}
-      <section className="flex flex-col md:flex-row w-full min-h-screen bg-white">
+      <section className="flex flex-col md:flex-row w-full min-h-screen bg-white">  
         {/* Textos */}
-        <div className="w-full md:w-3/5 flex flex-col justify-center px-30 py-16">
-          <h2 className="text-2xl font-bold mb-4">MISIÓN</h2>
-          <p className="mb-8 text-lg">
+        <div className="w-full md:w-3/5 flex flex-col justify-center px-10 sm:px-20 py-8 sm:py-16">
+          <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">MISIÓN</h2>
+          <p className="mb-6 sm:mb-8 text-base sm:text-lg text-justify sm:text-left">
             Nos dedicamos a crear piezas que combinan procesos artesanales y
             tecnológicos, porque creemos que en el mundo actual, la fusión de
             ambos recursos permite lograr diseños únicos y significativos.
@@ -72,14 +72,16 @@ const WhoAreWe = () => {
             para ofrecer piezas que no solo embellecen, sino que representan la
             forma de ser de cada persona.
           </p>
-          <h2 className="text-2xl font-bold mb-4">VISIÓN</h2>
-          <p className="mb-8 text-lg">
+          <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">VISIÓN</h2>
+          <p className="mb-6 sm:mb-8 text-base sm:text-lg text-justify sm:text-left">
             Ser de las primeras marcas de joyería a nivel nacional que usa
             modelado paramétrico personalizado por el mismo usuario para crear
             piezas únicas.
           </p>
-          <h2 className="text-2xl font-bold mb-4">VALORES</h2>
-          <p className="text-lg">Conexión, comunidad e innovación.</p>
+          <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">VALORES</h2>
+          <p className="text-base sm:text-lg text-justify sm:text-left">
+            Conexión, comunidad e innovación.
+          </p>
         </div>
         {/* Imagen vertical */}
         <div className="w-full md:w-2/5 h-[600px] md:h-auto">
