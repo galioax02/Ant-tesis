@@ -19,29 +19,27 @@ export default function Home() {
       {/* Sección 1 */}
       <Navbar />
       <section className="relative w-full h-screen overflow-hidden">
-        
         {/* Video de fondo */}
         <Image
           src="/placeholders/FotosModelo/ATModelo-7.jpg"
-          alt="Logo"
+          alt="Modelo con piezas de joyería"
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           width={0}
           height={0}
           sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
         />
         {/* Navbar encima */}
-        
 
         {/* Contenido sobre el video */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
+        <div className="relative z-10 flex flex-col items-center justify-end h-full text-white px-4 text-center pb-15">
           <Image
-          src="/placeholders/marca/ATModelo-7.jpg"
-          alt="Logo"
-          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-          width={0}
-          height={0}
-          sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
-        />
+            src="/marca/TituloBlancoNBG.png"
+            alt="Logo"
+            className="w-48 md:w-64 lg:w-128"
+            width={0}
+            height={0}
+            sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, 320px"
+          />
         </div>
       </section>
 

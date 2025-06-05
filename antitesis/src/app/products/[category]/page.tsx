@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getProductsByCategory, getCategories } from "@/lib/products";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 export async function generateStaticParams() {
   return getCategories().map((category) => ({ category }));
@@ -15,13 +16,13 @@ export default async function ProductShowcase({ params }: { params: { category: 
   return (
     <main>
     <div className="p-6 bg-white mx-auto h-250">
-      
+      <Navbar />
       <h1 className="text-4xl mt-30 text-[#002496] font-bold mb-6 text-center">
         {params.category}
       </h1>
 
       {/* Galería */}
-      <div className="w-full px-7.5 py-15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-15">
+      <div className="w-full px-7.5 py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-15">
         {productosFiltrados.map((producto) => (
           <Link
             key={producto.id}
@@ -33,15 +34,13 @@ export default async function ProductShowcase({ params }: { params: { category: 
               alt={producto.nombre}
               width={1080}
               height={1080}
-              className={producto.categoria === "anillos"
-                ? "w-full h-64 object-cover object-center"
-                : "w-full h-96 object-cover object-center"}
+              className="w-full h-96 object-cover object-center"
             />
             <div className="p-4">
               <h2 className="text-xl text-black font-semibold mb-1">
                 {producto.nombre}
               </h2>
-              <p className="text-2xl text-blue mb-2">{producto.precio}</p>
+              <p className="text-2xl text-blue-900 font-semibold mb-2">{producto.precio}</p>
               {/* <p className="text-sm text-gray-600">{producto.descripcion}</p> */}
             </div>
           </Link>

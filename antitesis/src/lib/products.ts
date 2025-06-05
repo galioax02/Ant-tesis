@@ -3,7 +3,7 @@ export const productos = [
   {
     id: "anillo-1",
     nombre: "Anillo Ondas Elegantes",
-    categoria: "anillos",
+    categoria: "Anillos",
     descripcion:
       "Elegante pieza con patrones ondulados personalizables, ideal para ocasiones especiales.",
     imagen: "/placeholders/anillo1.jpg",
@@ -12,7 +12,7 @@ export const productos = [
   {
     id: "anillo-2",
     nombre: "Anillo Clásico",
-    categoria: "anillos",
+    categoria: "Anillos",
     descripcion: "Elegancia atemporal en oro blanco.",
     imagen: "/placeholders/anillo2.jpg",
     precio: "$2,500 MXN",
@@ -21,7 +21,7 @@ export const productos = [
   {
     id: "anillo-3",
     nombre: "Anillo Minimal",
-    categoria: "anillos",
+    categoria: "Anillos",
     descripcion: "Simplicidad y sofisticación.",
     imagen: "/placeholders/anillo3.jpg",
     galeria: [],
@@ -29,7 +29,7 @@ export const productos = [
   {
     id: "Nodo",
     nombre: "Dije nodo",
-    categoria: "dijes",
+    categoria: "Dijes",
     descripcion:
       "Su forma asimétrica y envolvente juega con el vacío, dejando espacio entre líneas que parecen pensadas por la naturaleza. Evoca movimiento interno, exploración y equilibrio imperfecto, es una pieza pensada para quienes disfrutan de las formas que no necesitan explicación.",
     imagen: "/placeholders/Nodo/DijeNodo.jpg",
@@ -44,7 +44,7 @@ export const productos = [
   {
     id: "Elipse",
     nombre: "Dije elipse",
-    categoria: "dijes",
+    categoria: "Dijes",
     descripcion:
       "Elipse toma inspiración en las trayectorias naturales y armónicas del universo. Su contorno fluido y centro vacío invitan a la contemplación, como una pausa que da sentido al ritmo. Simboliza el equilibrio, el ciclo vital y la continuidad.",
     imagen: "/placeholders/Elipse/DijeElipse.jpg",
@@ -59,7 +59,7 @@ export const productos = [
   {
     id: "Cenit",
     nombre: "Dije cenit",
-    categoria: "dijes",
+    categoria: "Dijes",
     descripcion:
       "Su forma ligera y abierta sugiere dirección, expansión y claridad. Evoca crecimiento, paso y transición. Este dije minimalista captura el instante en que todo parece avanzar.",
     imagen: "/placeholders/Cenit/DijeCenit.jpg",
