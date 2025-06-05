@@ -6,6 +6,7 @@ import {
   createViewport,
   IParameterApi,
 } from "@shapediver/viewer";
+import Link from "next/link";
 
 interface UsableParameter {
   id: string;
@@ -154,12 +155,12 @@ const ShapeDiverViewer = () => {
           </div>
         ))}
 
-        <button
-          onClick={() => window.open("https://8th.io/t33nt", "_blank")}
+        <Link
+          href="/viewer/filter"
           className="bg-[#002496] text-white px-6 py-3 rounded-lg mt-6 hover:bg-[#001f7a] transition-colors"
         >
           Ver en Realidad Aumentada
-        </button>
+        </Link>
       </div>
     </div>
   );
