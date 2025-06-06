@@ -12,7 +12,18 @@ export default function Carousel({ images }: { images: string[] }) {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <div className="relative w-[800px] h-[500px] flex items-center justify-center">
+      <div
+        className="
+        relative
+        w-full
+        h-[220px]
+        sm:h-[320px]
+        md:w-[600px] md:h-[400px]
+        lg:w-[800px] lg:h-[500px]
+        flex items-center justify-center
+        max-w-full
+      "
+      >
         <button
           onClick={handlePrev}
           className="absolute left-0 z-10 bg-white/80 text-3xl p-2 shadow hover:shadow-lg/50"
@@ -49,8 +60,8 @@ export default function Carousel({ images }: { images: string[] }) {
             <Image
               src={img}
               alt={`Miniatura ${idx + 1}`}
-              width={60}
-              height={60}
+              width={40}
+              height={40}
               className="object-cover rounded"
             />
           </button>
