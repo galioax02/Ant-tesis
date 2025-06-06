@@ -9,6 +9,7 @@ import EnvironmentCycler from "@/components/EnvironmentCycler";
 import Link from "next/link";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -84,6 +85,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

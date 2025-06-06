@@ -1,36 +1,39 @@
 "use client";
 
+/* eslint-disable */
+
 import { useEffect, useRef, useState } from "react";
 import {
   createSession,
   createViewport,
   IParameterApi,
 } from "@shapediver/viewer";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface UsableParameter {
   id: string;
   name: string;
   type: string;
-  value: any;  // eslint-disable-line 
+  value: any; 
   min?: number;
   max?: number;
   step?: number;
-  api: IParameterApi<any>;  // eslint-disable-line 
+  api: IParameterApi<any>;
   choices?: string[];
 }
 
 const ShapeDiverViewer = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [params, setParams] = useState<UsableParameter[]>([]);
-  const sessionRef = useRef<any>(null);  // eslint-disable-line 
+  const sessionRef = useRef<any>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const initViewer = async () => {
       if (!canvasRef.current) return;
 
       try {
-        const viewport = await createViewport({ // eslint-disable-line 
+        const viewport = await createViewport({
           canvas: canvasRef.current,
           id: "myViewport",
           branding: {
@@ -38,7 +41,6 @@ const ShapeDiverViewer = () => {
             busyModeSpinner: "/marca/LogoAzulNBG.png",
             backgroundColor: "FFFFFF",
           },
-
         });
 
         const session = await createSession({
@@ -56,20 +58,21 @@ const ShapeDiverViewer = () => {
 
         const usableParameters: UsableParameter[] = visibleParams.map((p) => {
           const step =
-            typeof (p as any).step !== "undefined"  // eslint-disable-line 
-              ? (p as any).step  // eslint-disable-line 
-              : typeof (p as any).decimalplaces !== "undefined"  // eslint-disable-line 
-              ? Math.pow(10, -(p as any).decimalplaces)  // eslint-disable-line 
+            typeof (p as any).step !== "undefined"
+              ? (p as any).step
+              : typeof (p as any).decimalplaces !== "undefined"
+              ? Math.pow(10, -(p as any).decimalplaces)
               : 0.5;
           return {
             id: p.id,
             name: p.displayname || p.name,
             type: p.type,
             value: p.value,
-            min: (p as any).min,  // eslint-disable-line 
-            max: (p as any).max,  // eslint-disable-line 
+            min: (p as any).min,
+            max: (p as any).max,
             step,
             api: p,
+            choices: (p as any).choices || undefined,
           };
         });
 
@@ -103,6 +106,26 @@ const ShapeDiverViewer = () => {
     );
   };
 
+  // --- Lógica para restricciones dinámicas ---
+  // Ejemplo: si "secciones" === 3, "ángulo" solo puede ser [0,2,3]
+  const getRestrictedValues = (param: UsableParameter) => {
+    if (param.name.toLowerCase() === "angulo" || param.name.toLowerCase() === "ángulo") {
+      const secciones = params.find(
+        (p) => p.name.toLowerCase() === "secciones"
+      );
+      if (secciones && Number(secciones.value) === 3) {
+        return [0,2,3,5,6,8,9];
+      } else 
+      if (secciones && Number(secciones.value) === 4) {
+        return [0,1,3,4,5,7,8,9];
+      }
+    }
+    return null;
+  };
+
+  const seccion = params.find(p => p.name.toLowerCase() === "secciones")?.value;
+  const angulo = params.find(p => p.name.toLowerCase() === "ángulo" || p.name.toLowerCase() === "angulo")?.value;
+
   return (
     <div className="min-h-screen bg-white text-[#002496] px-6 py-20 flex flex-col md:flex-row gap-10 max-w-7xl mx-auto overflow-hidden">
       <div className="w-full md:w-1/2 flex items-center justify-center overflow-hidden">
@@ -116,51 +139,87 @@ const ShapeDiverViewer = () => {
       <div className="w-full md:w-1/2 flex flex-col justify-center gap-6">
         <h1 className="text-4xl font-bold">Joyería Paramétrica</h1>
 
-        {params.map((param) => (
-          <div key={param.id} className="flex flex-col">
-            <label className="font-semibold mb-1">{param.name}</label>
+        {params.map((param) => {
+          const restrictedValues = getRestrictedValues(param);
 
-            {param.type === "StringList" && param.api.choices ? (
-              <select
-                value={param.value}
-                onChange={(e) => {
-                  handleValueChange(param, e.target.value);
-                  updateModel();
-                }}
-                className="w-full p-2 border border-gray-300 rounded-md text-[#002496]"
-              >
-                {param.api.choices
-                .filter((choice: any) => !/^\d+\.\d+$/.test(choice))  // eslint-disable-line
-                .map((choice: any) => (  // eslint-disable-line 
-                  <option key={choice} value={choice}>
-                    {choice}
-                  </option>
-                ))}
-              </select>
-            ) : (
-              <input
-                type="range"
-                min={param.min}
-                max={param.max}
-                step={param.step}
-                value={param.value}
-                onChange={(e) =>
-                  handleValueChange(param, parseFloat(e.target.value))
-                }
-                onMouseUp={updateModel}
-                onTouchEnd={updateModel}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#002496]"
-              />
-            )}
-          </div>
-        ))}
+          return (
+            <div key={param.id} className="flex flex-col">
+              <label className="font-semibold mb-1">{param.name}</label>
 
-        <Link
-          href="/viewer/filter"
+              {restrictedValues ? (
+                <div className="flex items-center gap-4 my-2">
+                  <button
+                    type="button"
+                    className="w-10 h-10 rounded-full bg-gray-200 text-2xl font-bold flex items-center justify-center hover:bg-[#e6eaff] transition"
+                    onClick={() => {
+                      const idx = restrictedValues.indexOf(param.value);
+                      if (idx > 0) {
+                        handleValueChange(param, restrictedValues[idx - 1]);
+                        updateModel();
+                      }
+                    }}
+                    aria-label="Menos"
+                  >
+                    −
+                  </button>
+                  
+                  <button
+                    type="button"
+                    className="w-10 h-10 rounded-full bg-gray-200 text-2xl font-bold flex items-center justify-center hover:bg-[#e6eaff] transition"
+                    onClick={() => {
+                      const idx = restrictedValues.indexOf(param.value);
+                      if (idx < restrictedValues.length - 1) {
+                        handleValueChange(param, restrictedValues[idx + 1]);
+                        updateModel();
+                      }
+                    }}
+                    aria-label="Más"
+                  >
+                    +
+                  </button>
+                </div>
+              ) : param.type === "StringList" && param.api.choices ? (
+                <select
+                  value={param.value}
+                  onChange={(e) => {
+                    handleValueChange(param, e.target.value);
+                    updateModel();
+                  }}
+                  className="w-full p-2 border border-gray-300 rounded-md text-[#002496]"
+                >
+                  {param.api.choices
+                    .filter((choice: any) => !/^\d+\.\d+$/.test(choice))
+                    .map((choice: any) => (
+                      <option key={choice} value={choice}>
+                        {choice}
+                      </option>
+                    ))}
+                </select>
+              ) : (
+                <input
+                  type="range"
+                  min={param.min}
+                  max={param.max}
+                  step={param.step}
+                  value={param.value}
+                  onChange={(e) =>
+                    handleValueChange(param, parseFloat(e.target.value))
+                  }
+                  onMouseUp={updateModel}
+                  onTouchEnd={updateModel}
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#002496]"
+                />
+              )}
+            </div>
+          );
+        })}
+
+        <button
+          onClick={() => router.push(`/viewer/filter?seccion=${seccion}&angulo=${angulo}`)}
           className="bg-[#002496] text-white px-6 py-3 rounded-lg mt-6 hover:bg-[#001f7a] transition-colors"
         >
           Ver en Realidad Aumentada
-        </Link>
+        </button>
       </div>
     </div>
   );
