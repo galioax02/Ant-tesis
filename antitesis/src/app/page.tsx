@@ -31,7 +31,8 @@ export default function Home() {
         {/* Navbar encima */}
 
         {/* Contenido sobre el video */}
-        <div className="relative z-10 flex flex-col items-center justify-end h-full text-white px-4 text-center pb-15">
+        <div className="relative z-10 flex flex-col items-center justify-end h-full text-white px-4 text-center pb-10 sm:pb-16">
+        {/* <div className="relative z-10 flex flex-col items-center justify-end h-full text-white px-4 text-center pb-15"> */}
           <Image
             src="/marca/TituloBlancoNBG.png"
             alt="Logo"
