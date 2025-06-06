@@ -7,7 +7,7 @@ export const productos = [
     descripcion:
       "Su forma asimétrica y envolvente juega con el vacío, dejando espacio entre líneas que parecen pensadas por la naturaleza. Evoca movimiento interno, exploración y equilibrio imperfecto, es una pieza pensada para quienes disfrutan de las formas que no necesitan explicación.",
     imagen: "/placeholders/Nodo/DijeNodo.jpg",
-    precio: "$2,500 MXN",
+    precio: "$2,000 MXN",
     galeria: [
       "/placeholders/Nodo/NodoHorizontal.jpg",
       "/placeholders/Nodo/NodoHorizontal2.jpg",
@@ -22,7 +22,7 @@ export const productos = [
     descripcion:
       "Elipse toma inspiración en las trayectorias naturales y armónicas del universo. Su contorno fluido y centro vacío invitan a la contemplación, como una pausa que da sentido al ritmo. Simboliza el equilibrio, el ciclo vital y la continuidad.",
     imagen: "/placeholders/Elipse/DijeElipse.jpg",
-    precio: "$2,500 MXN",
+    precio: "$2,200 MXN",
     galeria: [
       "/placeholders/Elipse/ElipseHorizontal.jpg",
       "/placeholders/Elipse/ElipseHorizontal2.jpg",
@@ -37,7 +37,7 @@ export const productos = [
     descripcion:
       "Su forma ligera y abierta sugiere dirección, expansión y claridad. Evoca crecimiento, paso y transición. Este dije minimalista captura el instante en que todo parece avanzar.",
     imagen: "/placeholders/Cenit/DijeCenit.jpg",
-    precio: "$2,500 MXN",
+    precio: "$2,000 MXN",
     galeria: [
       "/placeholders/Cenit/CenitHorizontal.jpg",
       "/placeholders/Cenit/CenitModelo.jpg",
