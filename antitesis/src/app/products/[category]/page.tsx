@@ -52,7 +52,7 @@ export default async function ProductShowcase({
         </div>
         
       </div>
-      <Footer />
+      
     </main>
   );
 }
