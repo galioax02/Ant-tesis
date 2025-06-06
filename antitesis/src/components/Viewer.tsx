@@ -252,7 +252,7 @@ const ShapeDiverViewer = () => {
               ) : (
                 <input
                   type="range"
-                  min={param.min}
+                  min={param.name.toLowerCase() === "profundidad" ? 2 : param.min}
                   max={param.max}
                   step={param.step}
                   value={param.value}
