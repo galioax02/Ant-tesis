@@ -27,6 +27,7 @@ const ShapeDiverViewer = () => {
   const [params, setParams] = useState<UsableParameter[]>([]);
   const sessionRef = useRef<any>(null);
   const router = useRouter();
+  const [tipo, setTipo] = useState<"anillo" | "dije">("anillo");
 
   useEffect(() => {
     const initViewer = async () => {
@@ -141,8 +142,18 @@ const ShapeDiverViewer = () => {
     return null;
   };
 
+  // Filtra los parámetros según el tipo seleccionado
+  const paramsFiltrados = params.filter((p) => {
+    if (tipo === "anillo") {
+      return p.name.toLowerCase() !== "profundidad";
+    } else {
+      return p.name.toLowerCase() !== "talla";
+    }
+  });
+
   const seccion = params.find(p => p.name.toLowerCase() === "secciones")?.value;
   const angulo = params.find(p => p.name.toLowerCase() === "ángulo" || p.name.toLowerCase() === "angulo")?.value;
+  const talla = params.find(p => p.name.toLowerCase() === "talla")?.value;
 
   return (
     <div className="min-h-screen bg-white text-[#002496] px-6 py-20 flex flex-col md:flex-row gap-10 max-w-7xl mx-auto overflow-hidden">
@@ -157,7 +168,32 @@ const ShapeDiverViewer = () => {
       <div className="w-full md:w-1/2 flex flex-col justify-center gap-6">
         <h1 className="text-4xl font-bold">Joyería Paramétrica</h1>
 
-        {params.map((param) => {
+        {/* Selector de tipo */}
+        <div className="flex gap-4 mb-4">
+          <button
+            className={`px-4 py-2 rounded-lg border-2 font-semibold ${
+              tipo === "anillo"
+                ? "border-[#002496] bg-[#e6eaff]"
+                : "border-gray-300 bg-white"
+            }`}
+            onClick={() => setTipo("anillo")}
+          >
+            Anillo
+          </button>
+          <button
+            className={`px-4 py-2 rounded-lg border-2 font-semibold ${
+              tipo === "dije"
+                ? "border-[#002496] bg-[#e6eaff]"
+                : "border-gray-300 bg-white"
+            }`}
+            onClick={() => setTipo("dije")}
+          >
+            Dije
+          </button>
+        </div>
+
+        {/* Parámetros dinámicos */}
+        {paramsFiltrados.map((param) => {
           const restrictedValues = getRestrictedValues(param);
 
           return (
@@ -233,10 +269,14 @@ const ShapeDiverViewer = () => {
         })}
 
         <button
-          onClick={() => router.push(`/viewer/filter?seccion=${seccion}&angulo=${angulo}`)}
+          onClick={() =>
+            tipo === "anillo"
+              ? router.push(`/viewer/filter?seccion=${seccion}&angulo=${angulo}&talla=${talla}`)
+              : router.push(`/viewer/filter?seccion=null&angulo=null&talla=null`)
+          }
           className="bg-[#002496] text-white px-6 py-3 rounded-lg mt-6 hover:bg-[#001f7a] transition-colors"
         >
-          Ver en Realidad Aumentada
+          Continuar
         </button>
       </div>
     </div>

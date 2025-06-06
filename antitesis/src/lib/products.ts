@@ -1,32 +1,6 @@
 // src/lib/products.ts
 export const productos = [
   {
-    id: "anillo-1",
-    nombre: "Anillo Ondas Elegantes",
-    categoria: "Anillos",
-    descripcion:
-      "Elegante pieza con patrones ondulados personalizables, ideal para ocasiones especiales.",
-    imagen: "/placeholders/anillo1.jpg",
-    galeria: [],
-  },
-  {
-    id: "anillo-2",
-    nombre: "Anillo Clásico",
-    categoria: "Anillos",
-    descripcion: "Elegancia atemporal en oro blanco.",
-    imagen: "/placeholders/anillo2.jpg",
-    precio: "$2,500 MXN",
-    galeria: [],
-  },
-  {
-    id: "anillo-3",
-    nombre: "Anillo Minimal",
-    categoria: "Anillos",
-    descripcion: "Simplicidad y sofisticación.",
-    imagen: "/placeholders/anillo3.jpg",
-    galeria: [],
-  },
-  {
     id: "Nodo",
     nombre: "Dije nodo",
     categoria: "Dijes",
