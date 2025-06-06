@@ -118,7 +118,25 @@ const ShapeDiverViewer = () => {
       } else 
       if (secciones && Number(secciones.value) === 4) {
         return [0,1,3,4,5,7,8,9];
-      }
+      } else 
+      if (secciones && Number(secciones.value) === 5) {
+        return [0,1,2,3,4];
+      } else 
+      if (secciones && Number(secciones.value) === 6) {
+        return [];
+      } else 
+      if (secciones && Number(secciones.value) === 7) {
+        return [];
+      } else 
+      if (secciones && Number(secciones.value) === 8) {
+        return [];
+      } else 
+      if (secciones && Number(secciones.value) === 9) {
+        return [0,1,2,3,4,5,6,7,8,9,10];
+      } else 
+      if (secciones && Number(secciones.value) === 10) {
+        return [0,1,2,3,4,5,6,7,8,9,10];
+      } 
     }
     return null;
   };
