@@ -18,21 +18,19 @@ export default function Home() {
     <div className="w-full min-h-screen scroll-smooth">
       {/* Sección 1 */}
       <Navbar />
-      <section className="relative w-full h-screen overflow-hidden">
-        {/* Video de fondo */}
+      <section className="relative w-full min-h-screen overflow-hidden">
+        {/* Imagen de fondo */}
         <Image
           src="/placeholders/FotosModelo/ATModelo-7.jpg"
           alt="Modelo con piezas de joyería"
-          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          className="absolute inset-0 w-full h-full object-cover z-[-1]"
           width={0}
           height={0}
           sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
         />
-        {/* Navbar encima */}
 
-        {/* Contenido sobre el video */}
-        <div className="relative z-10 flex flex-col items-center justify-end h-full text-white px-4 text-center pb-10 sm:pb-16">
-        {/* <div className="relative z-10 flex flex-col items-center justify-end h-full text-white px-4 text-center pb-15"> */}
+        {/* Logo siempre abajo */}
+        <div className="absolute bottom-0 left-0 w-full flex justify-center pb-10 sm:pb-16 z-10">
           <Image
             src="/marca/TituloBlancoNBG.png"
             alt="Logo"
