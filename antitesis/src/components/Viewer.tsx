@@ -155,6 +155,20 @@ const ShapeDiverViewer = () => {
   const angulo = params.find(p => p.name.toLowerCase() === "ángulo" || p.name.toLowerCase() === "angulo")?.value;
   const talla = params.find(p => p.name.toLowerCase() === "talla")?.value;
 
+  // Cuando el tipo cambia a "anillo", fuerza profundidad a 2 si existe
+  useEffect(() => {
+    if (tipo === "anillo") {
+      const profundidadParam = params.find(
+        (p) => p.name.toLowerCase() === "profundidad"
+      );
+      if (profundidadParam && profundidadParam.value !== 2) {
+        handleValueChange(profundidadParam, 2);
+        updateModel();
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tipo]);
+
   return (
     <div className="min-h-screen bg-white text-[#002496] px-6 py-20 flex flex-col md:flex-row gap-10 max-w-7xl mx-auto overflow-hidden">
       <div className="w-full md:w-1/2 flex items-center justify-center overflow-hidden">
