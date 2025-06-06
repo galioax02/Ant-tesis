@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { getProductsByCategory, getCategories } from "@/lib/products";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export async function generateStaticParams() {
   return getCategories().map((category) => ({ category }));

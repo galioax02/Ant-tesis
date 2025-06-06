@@ -135,7 +135,7 @@ const ShapeDiverViewer = () => {
         return [0,1,2,3,4];
       } else 
       if (secciones && Number(secciones.value) === 10) {
-        return [0,1,2,3,4];
+        return [0,1,2,3,4,5];
       } 
     }
     return null;
