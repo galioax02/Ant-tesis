@@ -9,6 +9,7 @@ import {
   IParameterApi,
 } from "@shapediver/viewer";
 import { useRouter } from "next/navigation";
+import SizeDisclaimer from "@/components/SizeDisclaimer"
 
 interface UsableParameter {
   id: string;
@@ -166,7 +167,7 @@ const ShapeDiverViewer = () => {
         updateModel();
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [tipo]);
 
   return (
@@ -213,7 +214,8 @@ const ShapeDiverViewer = () => {
           return (
             <div key={param.id} className="flex flex-col">
               <label className="font-semibold mb-1">{param.name}</label>
-
+              {param.name.toLowerCase() === "talla" && <SizeDisclaimer />}
+              
               {restrictedValues ? (
                 <div className="flex items-center gap-4 my-2">
                   <button
