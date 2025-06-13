@@ -155,6 +155,9 @@ const ShapeDiverViewer = () => {
   const seccion = params.find(p => p.name.toLowerCase() === "secciones")?.value;
   const angulo = params.find(p => p.name.toLowerCase() === "ángulo" || p.name.toLowerCase() === "angulo")?.value;
   const talla = params.find(p => p.name.toLowerCase() === "talla")?.value;
+  const suavizado = params.find(p => p.name.toLowerCase() === "suavidad")?.value;
+  const profundidad = params.find(p => p.name.toLowerCase() === "profundidad")?.value;
+
 
   // Cuando el tipo cambia a "anillo", fuerza profundidad a 2 si existe
   useEffect(() => {
@@ -287,8 +290,8 @@ const ShapeDiverViewer = () => {
         <button
           onClick={() =>
             tipo === "anillo"
-              ? router.push(`/viewer/filter?seccion=${seccion}&angulo=${angulo}&talla=${talla}`)
-              : router.push(`/viewer/filter?seccion=null&angulo=null&talla=null`)
+              ? router.push(`/viewer/filter?tipo=${tipo}&seccion=${seccion}&angulo=${angulo}&talla=${talla}&suavizado=${suavizado}`)
+              : router.push(`/viewer/filter?tipo=${tipo}&seccion=${seccion}&angulo=${angulo}&suavizado=${suavizado}&profundidad=${profundidad}`)
           }
           className="bg-[#002496] text-white px-6 py-3 rounded-lg mt-6 hover:bg-[#001f7a] transition-colors"
         >

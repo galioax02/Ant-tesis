@@ -6,11 +6,15 @@ import Navbar from "@/components/Navbar";
 export default function FilterClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const tipo = searchParams.get("tipo");
   const seccion = searchParams.get("seccion");
   const angulo = searchParams.get("angulo");
+  const talla = searchParams.get("talla");
+  const suavizado = searchParams.get("suavizado");
+  const profundidad = searchParams.get("profundidad");
 
   const tieneParametros =
-    seccion && angulo && seccion !== "null" && angulo !== "null";
+    tipo === "anillo" 
 
   const qrSrc = tieneParametros
     ? `/anillos/${seccion}/${angulo}.png`
@@ -55,7 +59,11 @@ export default function FilterClient() {
           Regresar
         </button>
         <button
-          onClick={() => router.push("/checkout")}
+          onClick={() =>
+            tipo === "anillo"
+              ? router.push(`/checkout?tipo=${tipo}&seccion=${seccion}&angulo=${angulo}&talla=${talla}&suavizado=${suavizado}`)
+              : router.push(`/checkout?tipo=${tipo}&seccion=${seccion}&angulo=${angulo}&suavizado=${suavizado}&profundidad=${profundidad}`)
+          }
           className="bg-[#002496] text-white px-10 py-3 rounded-full font-semibold hover:bg-[#001a70] transition"
         >
           Continuar

@@ -23,7 +23,6 @@ exports.handler = async function(event, context) {
     - Teléfono: ${order.telefono}
     - Correo: ${order.correo}
     - Precio: $ ${order.precio}
-    - Parámetros: ${JSON.stringify(order.parametros, null, 2)}
 
     Nos pondremos en contacto contigo pronto.
   `;
@@ -36,8 +35,7 @@ exports.handler = async function(event, context) {
     Teléfono: ${order.telefono}
     Correo: ${order.correo}
     Precio: $ ${order.precio}
-    Parámetros: ${JSON.stringify(order.parametros, null, 2)}
-  `;
+    Parámetros: ${Object.entries(order.parametros).map(([key, value]) => `- ${key}: ${value}`).join('\n')}`;
 
   // Usa variables de entorno para seguridad
   const transporter = nodemailer.createTransport({
