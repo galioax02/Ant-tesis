@@ -22,16 +22,20 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ params, price }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Aquí puedes conectar con tu backend o servicio de email
-    // Ejemplo usando Formspree:
-    await fetch("https://formspree.io/f/tu-form-id", {
+    const order = {
+      nombre: form.nombre,
+      apellido: form.apellido,
+      telefono: form.telefono,
+      correo: form.correo,
+      parametros: params,
+      precio: price,
+    };
+    const customerEmail = form.correo;
+
+    await fetch("/.netlify/functions/SendOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...form,
-        parametros: JSON.stringify(params),
-        precio: price,
-      }),
+      body: JSON.stringify({ order, customerEmail }),
     });
 
     setEnviado(true);
