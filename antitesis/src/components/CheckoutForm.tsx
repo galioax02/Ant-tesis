@@ -1,12 +1,19 @@
 "use client";
 import React, { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
-interface CheckoutFormProps {
-  params: Record<string, string | number>;
-  price: number;
-}
+export default function CheckoutForm() {
+  const searchParams = useSearchParams();
 
-const CheckoutForm: React.FC<CheckoutFormProps> = ({ params, price }) => {
+  // Convierte los parámetros de la URL en un objeto
+  const params: Record<string, string | number> = {};
+  searchParams.forEach((value, key) => {
+    params[key] = isNaN(Number(value)) ? value : Number(value);
+  });
+
+  // Puedes calcular el precio aquí según los parámetros, o dejarlo fijo
+  const price = 2300;
+
   const [form, setForm] = useState({
     nombre: "",
     apellido: "",
@@ -107,6 +114,4 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ params, price }) => {
       </form>
     </div>
   );
-};
-
-export default CheckoutForm;
+}
