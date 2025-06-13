@@ -1,13 +1,10 @@
-"use client"
+// pages/order.tsx
+import ViewerTest from '@/components/ViewerTest';
 
-import RingConfigurator from "@/components/ViewerTest";
-import Navbar from "@/components/Navbar";
-
-export default function Page() {
+export default function OrderPage() {
   return (
-    <>
-      <Navbar />
-      <RingConfigurator/>
-    </>
+    <div className="min-h-screen p-8 bg-gray-50">
+      <ViewerTest />
+    </div>
   );
 }
