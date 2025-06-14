@@ -39,7 +39,7 @@ export default function CheckoutForm() {
     };
     const customerEmail = form.correo;
 
-    await fetch("/.netlify/functions/SendOrder", {
+    await fetch("/.netlify/functions/sendOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ order, customerEmail }),
