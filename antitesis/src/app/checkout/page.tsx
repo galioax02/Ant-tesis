@@ -1,5 +1,4 @@
 // Ejemplo de uso en page.tsx
-'use client';
 import CheckoutForm from "@/components/CheckoutForm";
 import Navbar from "@/components/Navbar";
 
