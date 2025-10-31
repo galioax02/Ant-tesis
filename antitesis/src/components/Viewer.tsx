@@ -47,7 +47,7 @@ const ShapeDiverViewer = () => {
 
         const session = await createSession({
           ticket:
-            "bf5f5b03c7980563cf9672c3b96433433d8d9baa2de2eb06ba0e5faf128a3e8e19e491f80085a3a057f9ff1f90b9d41d2e86bf6576ed0867e5f85b82881e843b4086fd951eb944c3dadb540b9835f93bd70b0925973176317309dcd95b40f0997df998c26aeb2d-904fee895c06e11d4e1c31037ec2a676",
+            "c02ac7fee6a1f8699a49293e0e9d268b562ec959f048fc813eac3fb66fee4e3c30e35b6a09fdb6254c1c3b7457831a6157736ebba49bc41b26b2126aab9bc762fa5ea0e0f6029d1f5b5663ed605af56c50910b322594ec7089aad091bb6c165aeddd3146d408c0-e27c27857e16f3c958b1aca43cc5074a",
           modelViewUrl: "https://sdr8euc1.eu-central-1.shapediver.com",
           id: "mySession",
         });
